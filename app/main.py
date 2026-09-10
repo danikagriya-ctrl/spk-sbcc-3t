@@ -1,5 +1,6 @@
 import os
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -265,11 +266,28 @@ Beri saran taktis yang realistis untuk wilayah 3T, gunakan bahasa Indonesia yang
         raise HTTPException(status_code=500, detail=str(e))
 
 
-# Setup Static Files untuk menyajikan Frontend UI
+# Setup Layanan Frontend UI (index.html)
+def read_index_html():
+    candidates = [
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "static", "index.html"),
+        os.path.join(os.getcwd(), "app", "static", "index.html"),
+        os.path.join(os.getcwd(), "static", "index.html"),
+        os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "app", "static", "index.html"),
+        os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "static", "index.html"),
+    ]
+    for p in candidates:
+        if os.path.exists(p):
+            with open(p, "r", encoding="utf-8") as f:
+                return f.read()
+    return "<h1>SPK-SBCC 3T: File index.html sedang dimuat</h1>"
+
+@app.get("/", response_class=HTMLResponse)
+@app.get("/index.html", response_class=HTMLResponse)
+@app.get("/api/index.py", response_class=HTMLResponse)
+@app.get("/api/index", response_class=HTMLResponse)
+def serve_frontend_root():
+    return HTMLResponse(content=read_index_html(), status_code=200)
+
 static_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "static")
 if os.path.exists(static_dir):
-    app.mount("/", StaticFiles(directory=static_dir, html=True), name="static")
-else:
-    # Buat foldernya jika belum ada agar tidak error saat start
-    os.makedirs(static_dir, exist_ok=True)
-    app.mount("/", StaticFiles(directory=static_dir, html=True), name="static")
+    app.mount("/static", StaticFiles(directory=static_dir), name="static_assets")

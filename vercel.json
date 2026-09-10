@@ -2,7 +2,7 @@
   "name": "spk-sbcc-3t",
   "functions": {
     "api/index.py": {
-      "includeFiles": "knowledge_base/**,app/static/**"
+      "includeFiles": "knowledge_base/**,app/static/**,static/**"
     }
   },
   "rewrites": [
