@@ -1,0 +1,105 @@
+{
+  "rules": [
+    {
+      "id": "R-DX-C-Ph-01",
+      "if": {"signal": "hambatan_fisik_keterampilan", "value": true},
+      "then": {"set_deficit": "C-Ph"},
+      "evidence": "Sasaran tidak memiliki keterampilan fisik atau kemampuan fisik dasar untuk melakukan tindakan.",
+      "source": "Michie et al. (2011), COM-B: Physical Capability"
+    },
+    {
+      "id": "R-DX-C-Ps-01",
+      "if": {"signal": "tidak_tahu_manfaat", "value": true},
+      "then": {"set_deficit": "C-Ps"},
+      "evidence": "Sasaran tidak mengetahui manfaat kesehatan dari perilaku yang dianjurkan.",
+      "source": "Michie et al. (2011), COM-B: Psychological Capability"
+    },
+    {
+      "id": "R-DX-C-Ps-02",
+      "if": {"signal": "tidak_tahu_cara", "value": true},
+      "then": {"set_deficit": "C-Ps"},
+      "evidence": "Sasaran bingung atau tidak mengetahui prosedur/cara melakukan perilaku tersebut.",
+      "source": "Michie et al. (2011), COM-B: Psychological Capability"
+    },
+    {
+      "id": "R-DX-O-Ph-01",
+      "if": {"signal": "sarana_tidak_tersedia", "value": true},
+      "then": {"set_deficit": "O-Ph"},
+      "evidence": "Produk, obat, atau sarana fisik tidak tersedia di wilayah sasaran atau puskesmas setempat.",
+      "source": "Michie et al. (2011), COM-B: Physical Opportunity"
+    },
+    {
+      "id": "R-DX-O-Ph-02",
+      "if": {"signal": "akses_jauh_atau_biaya_mahal", "value": true},
+      "then": {"set_deficit": "O-Ph"},
+      "evidence": "Fasilitas kesehatan terlalu jauh, biaya transportasi atau biaya produk terlalu mahal.",
+      "source": "Michie et al. (2011), COM-B: Physical Opportunity"
+    },
+    {
+      "id": "R-DX-O-Ph-03",
+      "if": {"signal": "sarana_tersedia", "value": true, "and_behaviour": "tetap_tidak_dilakukan"},
+      "then": {"deprioritize": "O-Ph", "focus_next": ["O-So", "M-Re", "M-Au"]},
+      "evidence": "Produk/sarana tersedia secara fisik, menunjukkan hambatan utama terletak pada faktor sosial atau motivasi.",
+      "source": "Michie et al. (2011), COM-B"
+    },
+    {
+      "id": "R-DX-O-So-01",
+      "if": {"signal": "mitos_atau_stigma", "value": true},
+      "then": {"set_deficit": "O-So"},
+      "evidence": "Terdapat mitos lokal, stigma sosial, kepercayaan adat, atau gosip negatif di masyarakat yang melarang perilaku tersebut.",
+      "source": "Michie et al. (2011), COM-B: Social Opportunity"
+    },
+    {
+      "id": "R-DX-O-So-02",
+      "if": {"signal": "keluarga_tidak_mendukung", "value": true},
+      "then": {"set_deficit": "O-So"},
+      "evidence": "Suami, orang tua, mertua, atau teman sebaya melarang atau tidak mendukung sasaran melakukan perilaku.",
+      "source": "Michie et al. (2011), COM-B: Social Opportunity"
+    },
+    {
+      "id": "R-DX-M-Re-01",
+      "if": {"signal": "merasa_tidak_perlu_atau_sehat", "value": true},
+      "then": {"set_deficit": "M-Re"},
+      "evidence": "Sasaran secara sadar merasa dirinya sehat sehingga menganggap perilaku pencegahan tidak penting.",
+      "source": "Michie et al. (2011), COM-B: Reflective Motivation"
+    },
+    {
+      "id": "R-DX-M-Re-02",
+      "if": {"signal": "tidak_berniat", "value": true},
+      "then": {"set_deficit": "M-Re"},
+      "evidence": "Sasaran menyatakan secara sadar tidak berniat atau menolak melakukan perilaku tersebut.",
+      "source": "Michie et al. (2011), COM-B: Reflective Motivation"
+    },
+    {
+      "id": "R-DX-M-Au-01",
+      "if": {"signal": "takut_efek_samping", "value": true},
+      "then": {"set_deficit": "M-Au"},
+      "evidence": "Ada rasa takut atau kekhawatiran emosional terhadap efek samping (mis. mual, pusing, demam, dll.).",
+      "source": "Michie et al. (2011), COM-B: Automatic Motivation"
+    },
+    {
+      "id": "R-DX-M-Au-02",
+      "if": {"signal": "malas_atau_lupa_kebiasaan", "value": true},
+      "then": {"set_deficit": "M-Au"},
+      "evidence": "Sasaran sering lupa, malas, atau memiliki kebiasaan lama (mis. makan makanan tidak sehat) yang menghalangi pembentukan perilaku baru.",
+      "source": "Michie et al. (2011), COM-B: Automatic Motivation"
+    }
+  ],
+  "clarifications": [
+    {
+      "id": "R-CLR-C-Ps",
+      "if_unknown": "C-Ps",
+      "ask": "Apakah sasaran sudah mengetahui manfaat kesehatan dan cara melakukan perilaku ini dengan benar?"
+    },
+    {
+      "id": "R-CLR-O-So",
+      "if_unknown": "O-So",
+      "ask": "Apakah ada mitos di masyarakat atau penolakan dari keluarga (suami/orang tua) terhadap perilaku ini?"
+    },
+    {
+      "id": "R-CLR-M-Au",
+      "if_unknown": "M-Au",
+      "ask": "Apakah ada keluhan efek samping, ketakutan tertentu, atau kebiasaan lama yang membuat mereka malas melakukannya?"
+    }
+  ]
+}

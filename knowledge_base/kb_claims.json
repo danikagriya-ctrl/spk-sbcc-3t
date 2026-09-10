@@ -1,0 +1,149 @@
+[
+  {
+    "topic": "tablet_tambah_darah",
+    "title": "Tablet Tambah Darah (TTD) Remaja Putri",
+    "description": "Mencegah anemia pada remaja putri guna mendukung konsentrasi belajar dan mempersiapkan kehamilan sehat di masa depan.",
+    "approved_claims": [
+      "Tablet Tambah Darah (TTD) mengandung zat besi dan asam folat yang penting untuk mencegah anemia.",
+      "Anemia pada remaja putri ditandai dengan 5L: Lemah, Letih, Lesu, Lelah, Lalai, serta sulit berkonsentrasi di sekolah.",
+      "Remaja putri dianjurkan minum TTD secara teratur sebanyak 1 tablet setiap minggu selama satu tahun.",
+      "TTD sebaiknya diminum setelah makan atau bersama air putih atau jus buah yang kaya vitamin C untuk membantu penyerapan zat besi.",
+      "Hindari minum TTD bersama teh, kopi, atau susu karena dapat menghambat penyerapan zat besi.",
+      "Efek samping ringan seperti mual, perih di lambung, atau tinja berwarna kehitaman adalah hal yang wajar dan tidak berbahaya.",
+      "Rasa mual setelah minum TTD dapat diminimalisir dengan meminumnya di malam hari sebelum tidur setelah makan malam."
+    ],
+    "prohibited_claims": [
+      "Mengklaim bahwa TTD menyembuhkan penyakit kronis selain anemia.",
+      "Menganjurkan dosis minum lebih dari 1 tablet per minggu tanpa petunjuk dokter.",
+      "Mengklaim bahwa mual adalah tanda keracunan TTD."
+    ],
+    "source": "Buku Panduan Aksi Bergizi Kementerian Kesehatan RI & UNICEF Indonesia"
+  },
+  {
+    "topic": "asi_eksklusif",
+    "title": "Pemberian ASI Eksklusif 6 Bulan",
+    "description": "Pemberian hanya air susu ibu saja kepada bayi sejak lahir sampai umur 6 bulan tanpa makanan atau minuman lain.",
+    "approved_claims": [
+      "ASI Eksklusif diberikan sejak lahir sampai bayi berusia 6 bulan tanpa tambahan makanan atau minuman lain, bahkan air putih.",
+      "ASI pertama (kolostrum) berwarna kekuningan, kaya akan antibodi, sangat penting untuk kekebalan tubuh bayi, dan harus diberikan kepada bayi.",
+      "Pemberian ASI Eksklusif melindungi bayi dari diare, infeksi telinga, saluran pernapasan, serta mengurangi risiko stunting.",
+      "Menyusui sesering mungkin (sesuai kebutuhan bayi, minimal 8-12 kali sehari) secara alami akan merangsang produksi ASI menjadi lebih banyak.",
+      "Pelekatan menyusui yang benar adalah mulut bayi terbuka lebar, sebagian besar areola (bagian gelap payudara) masuk ke mulut bayi, dagu bayi menempel pada payudara ibu.",
+      "Ibu menyusui membutuhkan dukungan emosional dari suami dan keluarga agar merasa rileks, karena rasa stres dapat menghambat aliran ASI."
+    ],
+    "prohibited_claims": [
+      "Menganjurkan susu formula sebelum usia 6 bulan tanpa indikasi medis resmi.",
+      "Mengklaim bahwa ASI encer atau berwarna putih bening tidak memiliki gizi.",
+      "Menganjurkan pemberian madu, pisang, atau air putih kepada bayi di bawah 6 bulan."
+    ],
+    "source": "Kementerian Kesehatan RI & Panduan Laktasi WHO/UNICEF"
+  },
+  {
+    "topic": "imunisasi_dasar",
+    "title": "Imunisasi Dasar Lengkap untuk Bayi",
+    "description": "Pemberian vaksin kepada bayi usia 0-11 bulan untuk mencegah Penyakit yang Dapat Dicegah Dengan Imunisasi (PD3I).",
+    "approved_claims": [
+      "Imunisasi dasar lengkap melindungi bayi dari penyakit berbahaya seperti TBC, Hepatitis B, Polio, Difteri, Pertusis (batuk rejan), Tetanus, Campak, dan Rubela.",
+      "Jadwal imunisasi dasar harus ditepati sesuai usia bayi sejak lahir (HB0) hingga usia 9 atau 11 bulan.",
+      "Reaksi ringan setelah imunisasi seperti demam ringan, kemerahan, atau sedikit bengkak di bekas suntikan adalah reaksi tubuh membentuk kekebalan yang wajar dan aman.",
+      "Demam setelah imunisasi dapat diredakan dengan kompres air hangat di lipat ketiak/paha, memberikan ASI lebih sering, atau obat penurun panas sesuai dosis petugas kesehatan.",
+      "Imunisasi aman bagi bayi, telah diuji secara ilmiah, dan vaksin disediakan secara gratis di Posyandu dan Puskesmas."
+    ],
+    "prohibited_claims": [
+      "Mengklaim bahwa imunisasi menyebabkan autisme atau kelumpuhan permanen.",
+      "Menganjurkan menunda imunisasi jika bayi dalam keadaan sehat.",
+      "Mengklaim bahwa kekebalan alami tanpa vaksin lebih baik daripada imunisasi."
+    ],
+    "source": "Program Imunisasi Nasional Kementerian Kesehatan RI"
+  },
+  {
+    "topic": "stop_babs",
+    "title": "Stop Buang Air Besar Sembarangan (Stop BABS / ODF)",
+    "description": "Mengubah perilaku masyarakat agar tidak buang air besar di area terbuka (sungai, kebun, semak-semak) dan beralih menggunakan jamban sehat.",
+    "approved_claims": [
+      "Buang air besar sembarangan (di sungai, kebun, pantai) menyebarkan kuman penyakit melalui air, lalat, dan tanah yang diinjak.",
+      "Penyakit diare, kolera, disentri, tifus, dan cacingan sangat mudah menular jika air bersih tercemar tinja manusia.",
+      "Jamban sehat harus memiliki leher angsa, septik tank yang kedap air agar tidak mencemari sumur terdekat, dan lantai yang bersih.",
+      "Jarak minimal septik tank dengan sumur gali atau sumber air bersih adalah 10 meter.",
+      "Masyarakat harus membiasakan Cuci Tangan Pakai Sabun (CTPS) dengan air mengalir setelah buang air besar dan sebelum makan."
+    ],
+    "prohibited_claims": [
+      "Mengklaim bahwa tinja bayi sehat tidak mengandung kuman penyakit.",
+      "Mengklaim bahwa buang air besar di sungai lebih bersih karena airnya mengalir.",
+      "Menganjurkan pembuatan septik tank tanpa dinding semen kedap air di daerah resapan air bersih dekat sumur."
+    ],
+    "source": "Panduan Sanitasi Total Berbasis Masyarakat (STBM) Kementerian Kesehatan RI"
+  },
+  {
+    "topic": "pencegahan_stunting",
+    "title": "Pencegahan Stunting (Gizi Ibu Hamil & Balita)",
+    "description": "Mencegah gagal tumbuh pada anak sejak masa kehamilan hingga balita melalui asupan protein hewani dan pemantauan tumbuh kembang.",
+    "approved_claims": [
+      "Stunting adalah kondisi gagal tumbuh pada balita akibat kekurangan gizi kronis terutama dalam 1000 Hari Pertama Kehidupan (HPK).",
+      "Ibu hamil wajib mengonsumsi makanan bergizi seimbang dan meminum Tablet Tambah Darah (TTD) untuk mencegah bayi lahir stunting.",
+      "Balita setelah usia 6 bulan harus diberikan Makanan Pendamping ASI (MPASI) yang kaya protein hewani seperti telur, ikan, atau daging setiap hari.",
+      "Pengukuran tinggi dan berat badan balita secara berkala di Posyandu setiap bulan sangat penting untuk deteksi dini masalah tumbuh kembang.",
+      "Pemberian Makanan Tambahan (PMT) lokal berbasis protein hewani membantu memulihkan balita dengan berat badan kurang."
+    ],
+    "prohibited_claims": [
+      "Mengklaim stunting semata-mata adalah faktor keturunan (genetis) yang tidak bisa diubah.",
+      "Menyebutkan bahwa susu kental manis atau susu formula tinggi gula merupakan pengganti protein hewani yang baik untuk balita.",
+      "Menganjurkan pemberian obat peninggi badan instan non-medis untuk mengatasi stunting pada balita."
+    ],
+    "source": "Buku Panduan Penyelenggaraan PMT Lokal Kemenkes RI"
+  },
+  {
+    "topic": "pencegahan_malaria",
+    "title": "Pencegahan Penularan Penyakit Malaria",
+    "description": "Mencegah penularan penyakit malaria melalui penggunaan kelambu berinsektisida secara rutin dan penanganan kasus secara dini.",
+    "approved_claims": [
+      "Malaria adalah penyakit infeksi yang disebabkan oleh parasit Plasmodium dan ditulapan melalui gigitan nyamuk Anopheles betina.",
+      "Tidur menggunakan kelambu berinsektisida secara rutin adalah cara paling efektif mencegah gigitan nyamuk malaria di malam hari.",
+      "Gejala utama malaria meliputi demam tinggi berkala, menggigil, sakit kepala, dan berkeringat dingin.",
+      "Pasien yang mengalami gejala malaria harus segera memeriksakan darah (RDT atau mikroskopis) di Puskesmas atau Pos Malaria Desa.",
+      "Pengobatan malaria harus menggunakan obat resmi (seperti DHP) dari petugas kesehatan dan harus diminum sampai habis sesuai resep dokter."
+    ],
+    "prohibited_claims": [
+      "Mengklaim bahwa malaria ditularkan melalui udara, air minum, atau makanan.",
+      "Menganjurkan pengobatan malaria hanya dengan ramuan herbal tradisional tanpa obat medis antimalaria resmi.",
+      "Menyatakan bahwa kelambu berinsektisida berbahaya atau beracun bagi manusia jika digunakan sesuai aturan tidur biasa."
+    ],
+    "source": "Pedoman Penatalaksanaan Kasus Malaria Kementerian Kesehatan RI"
+  },
+  {
+    "topic": "pencegahan_dbd",
+    "title": "Pencegahan DBD dengan Gerakan 3M Plus",
+    "description": "Mencegah perkembangbiakan nyamuk Aedes aegypti penular DBD melalui gerakan Menguras, Menutup, Mendaur ulang, serta perlindungan diri tambahan.",
+    "approved_claims": [
+      "Penyakit DBD ditularkan oleh nyamuk Aedes aegypti yang berkembang biak di genangan air bersih di dalam atau sekitar rumah.",
+      "Gerakan 3M Plus (Menguras bak air, Menutup rapat penampungan air, Mendaur ulang barang bekas) harus dilakukan minimal sekali seminggu.",
+      "Gejala DBD meliputi demam tinggi mendadak, nyeri di belakang mata, bintik merah di kulit, serta nyeri sendi/otot.",
+      "Penanganan awal demam DBD adalah memberi banyak minum air (air putih, jus, oralit) untuk mencegah dehidrasi dan memberikan parasetamol (hindari aspirin/ibuprofen).",
+      "Segera bawa penderita ke fasilitas kesehatan jika ada tanda bahaya seperti muntah terus-menerus, mimisan, nyeri perut hebat, atau lemas."
+    ],
+    "prohibited_claims": [
+      "Mengklaim bahwa fogging (pengasapan) saja sudah cukup untuk memberantas DBD tanpa gerakan 3M.",
+      "Menganjurkan penggunaan obat penurun panas jenis ibuprofen atau aspirin karena dapat memicu risiko pendarahan internal pada pasien DBD.",
+      "Mengklaim nyamuk DBD berkembang biak di air selokan yang kotor dan berlumpur."
+    ],
+    "source": "Modul Pencegahan dan Pengendalian DBD Kementerian Kesehatan RI"
+  },
+  {
+    "topic": "pencegahan_tbc",
+    "title": "Pencegahan Tuberkulosis (TBC) & Kepatuhan Minum Obat",
+    "description": "Mencegah penularan bakteri Mycobacterium tuberculosis melalui etika batuk dan memastikan penderita TBC berobat secara tuntas selama 6 bulan.",
+    "approved_claims": [
+      "Tuberkulosis (TBC) adalah penyakit menular yang disebabkan oleh bakteri dan umumnya menyerang paru-paru, bukan karena guna-guna atau kutukan.",
+      "Gejala utama TBC meliputi batuk berdahak terus-menerus selama 2 minggu atau lebih, sering disertai demam ringan di malam hari, dan berat badan menurun.",
+      "Penularan TBC dicegah dengan etika batuk/bersin yang benar (menutup mulut dengan tisu/lengan dalam) dan memastikan ventilasi udara/sinar matahari masuk ke rumah.",
+      "Diagnosis TBC dilakukan secara medis melalui pemeriksaan dahak (Tes Cepat Molekuler/TCM) di Puskesmas secara gratis.",
+      "Pengobatan TBC harus dilakukan secara teratur tanpa putus selama minimal 6 bulan menggunakan Obat Anti Tuberkulosis (OAT) di bawah pengawasan PMO."
+    ],
+    "prohibited_claims": [
+      "Mengklaim TBC adalah penyakit turunan atau akibat kutukan/guna-guna.",
+      "Menghentikan konsumsi obat TBC sebelum 6 bulan hanya karena merasa tubuh sudah sehat tanpa persetujuan dokter (menyebabkan TBC kebal obat).",
+      "Mengklaim bahwa penderita TBC harus dikucilkan sepenuhnya dari masyarakat tanpa upaya pengobatan medis."
+    ],
+    "source": "Petunjuk Teknis Penanggulangan TBC Kementerian Kesehatan RI"
+  }
+]

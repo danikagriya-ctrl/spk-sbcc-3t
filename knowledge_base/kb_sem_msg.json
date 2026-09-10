@@ -1,0 +1,74 @@
+{
+  "sem_levels": [
+    {
+      "level": "individual",
+      "name": "Individu",
+      "approach": "Behaviour Change Communication (BCC)",
+      "target_description": "Sasaran utama yang diharapkan berubah perilakunya (misal: Remaja Putri, Ibu Menyusui, Ibu Bayi, Kepala Keluarga)."
+    },
+    {
+      "level": "interpersonal",
+      "name": "Interpersonal / Keluarga",
+      "approach": "Behaviour Change Communication (BCC) + Social Change Communication",
+      "target_description": "Orang-orang terdekat yang mempengaruhi sasaran utama (misal: Orang Tua, Suami, Mertua, Sahabat)."
+    },
+    {
+      "level": "community",
+      "name": "Komunitas",
+      "approach": "Social Change Communication",
+      "target_description": "Tokoh masyarakat, tokoh agama, adat, kader posyandu, tetangga, dan kelompok sosial lokal."
+    },
+    {
+      "level": "organizational",
+      "name": "Organisasi / Layanan",
+      "approach": "Social Mobilization",
+      "target_description": "Puskesmas, Sekolah, Kantor Desa, Posyandu, atau lembaga penyedia layanan kesehatan."
+    },
+    {
+      "level": "policy",
+      "name": "Kebijakan / Sistem",
+      "approach": "Advocacy",
+      "target_description": "Kepala Desa, Camat, Dinas Kesehatan, Bupati, atau pengambil keputusan lokal."
+    }
+  ],
+  "message_frame": {
+    "know": {
+      "definition": "Apa yang perlu diketahui secara kognitif oleh sasaran. Harus berbasis bukti ilmiah tepercaya (ter-whitelist).",
+      "source_function": ["Education"]
+    },
+    "feel": {
+      "definition": "Sisi afektif, sikap, emosi positif, rasa percaya diri, rasa bangga, atau penurunan rasa takut/stigma.",
+      "source_function": ["Persuasion", "Modelling"]
+    },
+    "do": {
+      "definition": "Tindakan spesifik, konkret, terukur, dan realistis (doable) yang harus dilakukan sasaran.",
+      "source_function": ["Enablement", "Training"]
+    }
+  },
+  "four_ms": {
+    "mobilizers": {
+      "definition": "Agen perubahan atau panutan tepercaya yang menggerakkan sasaran (misal: Guru UKS, Kader, Tokoh Agama).",
+      "selection_source": "kanal_terpercaya"
+    },
+    "multipliers": {
+      "definition": "Kanal atau media yang melipatgandakan sebaran pesan (misal: radio komunitas, poster, konseling tatap muka).",
+      "selection_source": "context_3t_filter"
+    },
+    "messages": {
+      "definition": "Pesan kreatif berstruktur Know-Feel-Do yang disesuaikan dengan bahasa dan tingkat literasi sasaran.",
+      "selection_source": "message_composer + LLM"
+    },
+    "motivators": {
+      "definition": "Faktor pendorong atau insentif (bisa berupa apresiasi sosial, kebanggaan, atau rewards kecil).",
+      "selection_source": "Incentivisation / Modelling"
+    }
+  },
+  "creative_principles": [
+    "Konsisten: Gunakan istilah yang sama dan pesan yang selaras di semua kanal.",
+    "Positif: Utamakan anjuran positif ('Lakukan ini...') alih-alih larangan ('Jangan lakukan ini...').",
+    "Spesifik & Doable: Aksi harus sangat jelas dan mudah dipraktikkan tanpa biaya besar.",
+    "Aspiratif: Hubungkan dengan impian masa depan (misal: anak cerdas, remaja berprestasi, keluarga sehat).",
+    "Lokalitas: Promosikan pilihan lokal (misal: makanan lokal untuk MPASI, tokoh adat setempat).",
+    "Multi-kanal: Perkuat pesan yang sama melalui berbagai sudut pandang (keluarga, tokoh agama, sekolah)."
+  ]
+}

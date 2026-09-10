@@ -1,0 +1,60 @@
+{
+  "components": [
+    {
+      "code": "C-Ph",
+      "name": "Physical Capability",
+      "definition": "Keterampilan atau kapasitas fisik individu untuk melakukan perilaku.",
+      "diagnostic_questions": [
+        "Apakah secara fisik sasaran mampu/memiliki keterampilan untuk melakukan perilaku tersebut?",
+        "Apakah ada hambatan fisik tubuh atau kelemahan motorik sasaran dalam melakukan perilaku tersebut?"
+      ]
+    },
+    {
+      "code": "C-Ps",
+      "name": "Psychological Capability",
+      "definition": "Pengetahuan, pemahaman, dan keterampilan kognitif untuk melakukan perilaku.",
+      "diagnostic_questions": [
+        "Apakah sasaran mengetahui manfaat perilaku ini?",
+        "Apakah sasaran tahu cara melakukan perilaku dengan benar?",
+        "Apakah sasaran paham dampak negatif jika tidak melakukan perilaku ini?"
+      ]
+    },
+    {
+      "code": "O-Ph",
+      "name": "Physical Opportunity",
+      "definition": "Ketersediaan sarana, waktu, biaya, dan akses fisik lingkungan.",
+      "diagnostic_questions": [
+        "Apakah sarana/fasilitas/produk kesehatan tersedia di dekat sasaran?",
+        "Apakah biaya untuk mengakses perilaku/produk tersebut terjangkau?",
+        "Apakah sasaran memiliki cukup waktu dan akses jalan yang memadai?"
+      ]
+    },
+    {
+      "code": "O-So",
+      "name": "Social Opportunity",
+      "definition": "Norma sosial, budaya, dukungan interpersonal, dan pengaruh lingkungan sosial.",
+      "diagnostic_questions": [
+        "Apakah keluarga, teman sebaya, atau masyarakat sekitar mendukung perilaku ini?",
+        "Apakah ada mitos, stigma, kepercayaan adat, atau norma budaya yang melarang perilaku ini?"
+      ]
+    },
+    {
+      "code": "M-Re",
+      "name": "Reflective Motivation",
+      "definition": "Proses evaluasi sadar, rencana, keyakinan, niat, dan evaluasi diri.",
+      "diagnostic_questions": [
+        "Apakah sasaran berniat dan berencana untuk melakukan perilaku ini?",
+        "Apakah sasaran percaya bahwa perilaku ini bermanfaat bagi masa depannya?"
+      ]
+    },
+    {
+      "code": "M-Au",
+      "name": "Automatic Motivation",
+      "definition": "Proses emosional, impuls, kebiasaan lama, rasa takut, malas, atau keinginan spontan.",
+      "diagnostic_questions": [
+        "Apakah ada rasa takut akan efek samping, rasa malas, atau kebiasaan lama yang sulit diubah?",
+        "Apakah ada perasaan tidak nyaman/enggan secara emosional saat melakukan perilaku tersebut?"
+      ]
+    }
+  ]
+}

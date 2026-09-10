@@ -1,0 +1,64 @@
+========================================================================
+           PANDUAN MIGRASI / PINDAH PROYEK SPK-SBCC 3T
+========================================================================
+
+Panduan ini berisi langkah-langkah untuk menjalankan kembali proyek 
+Sistem Pendukung Keputusan Komunikasi Kesehatan (SPK-SBCC 3T) di laptop baru.
+
+------------------------------------------------------------------------
+LANGKAH 1: MENYIAPKAN FILE PROYEK
+------------------------------------------------------------------------
+1. Salin seluruh folder proyek ini (misal folder "LLM") ke penyimpanan 
+   eksternal (Flashdisk/Harddisk) atau upload ke Cloud Drive.
+2. Anda TIDAK PERLU menyalin folder ".venv" (Virtual Environment) atau 
+   folder "__pycache__" (cache kompilasi Python) agar proses transfer 
+   lebih ringan dan bersih. Folder virtual environment harus dibuat baru 
+   di laptop tujuan.
+3. Pastikan file penting berikut ikut tersalin:
+   - ".env" (berkas konfigurasi berisi API Key Gemini)
+   - "sessions.db" (database SQLite riwayat sesi Anda)
+   - "requirements.txt" (daftar pustaka Python yang dibutuhkan)
+   - "jalankan.bat" (script otomatisator untuk Windows)
+
+------------------------------------------------------------------------
+LANGKAH 2: INSTALASI PYTHON DI LAPTOP BARU
+------------------------------------------------------------------------
+1. Unduh dan pasang Python versi 3.9 sampai 3.11 dari situs resmi:
+   https://www.python.org/downloads/
+2. PENTING: Saat menjalankan instalasi di Windows, centang kotak 
+   "Add Python to PATH" pada bagian bawah installer sebelum mengeklik 
+   tombol "Install Now". Ini wajib agar perintah python bisa dibaca 
+   di Command Prompt (CMD).
+
+------------------------------------------------------------------------
+LANGKAH 3: INSTALASI LIBRARI/DEPENDENSI PYTHON
+------------------------------------------------------------------------
+1. Buka aplikasi Command Prompt (CMD) atau PowerShell di laptop baru.
+2. Masuk ke direktori folder proyek yang sudah Anda salin menggunakan 
+   perintah `cd`, contoh:
+   cd "C:\Users\Username\Documents\LLM"
+3. Jalankan perintah berikut untuk memasang seluruh library otomatis:
+   pip install -r requirements.txt
+
+------------------------------------------------------------------------
+LANGKAH 4: MENJALANKAN SERVER APLIKASI
+------------------------------------------------------------------------
+A. Menggunakan File Shortcut Otomatis (Hanya Windows):
+   - Cukup klik dua kali berkas "jalankan.bat" di folder proyek Anda.
+   - Script akan otomatis mengecek dependensi, membuka browser internet 
+     ke alamat http://127.0.0.1:8000, dan menyalakan server FastAPI.
+
+B. Menggunakan Command Line (CMD/Terminal):
+   - Dari folder proyek di CMD, jalankan perintah:
+     python -m uvicorn app.main:app --reload --port 8000
+   - Buka browser Anda secara manual ke alamat: http://127.0.0.1:8000
+
+------------------------------------------------------------------------
+PEMECAHAN MASALAH (TROUBLESHOOTING)
+------------------------------------------------------------------------
+* Masalah "Python is not recognized":
+  --> Python belum ditambahkan ke PATH sistem. Hapus instalasi Python, 
+      lalu pasang kembali dan pastikan opsi "Add Python to PATH" dicentang.
+* Masalah "API Key / Kuota Gemini Habis":
+  --> Buka file ".env" menggunakan Notepad, cari baris "GEMINI_API_KEY", 
+      lalu ganti kodenya dengan API Key Gemini Anda yang baru.

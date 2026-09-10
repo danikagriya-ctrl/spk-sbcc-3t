@@ -1,0 +1,59 @@
+{
+  "com_b_to_functions": {
+    "C-Ph": ["Training", "Enablement"],
+    "C-Ps": ["Education", "Training", "Enablement"],
+    "M-Re": ["Education", "Persuasion", "Incentivisation", "Coercion", "Enablement"],
+    "M-Au": ["Persuasion", "Incentivisation", "Coercion", "Training", "EnvironmentalRestructuring", "Modelling", "Enablement"],
+    "O-Ph": ["Restriction", "EnvironmentalRestructuring", "Enablement"],
+    "O-So": ["Restriction", "EnvironmentalRestructuring", "Modelling", "Enablement"]
+  },
+  "functions_to_policy": {
+    "Education": ["CommunicationMarketing", "Guidelines", "ServiceProvision"],
+    "Persuasion": ["CommunicationMarketing", "Guidelines"],
+    "Incentivisation": ["CommunicationMarketing", "Guidelines", "Fiscal", "ServiceProvision"],
+    "Coercion": ["Guidelines", "Fiscal", "Regulation", "Legislation"],
+    "Training": ["Guidelines", "ServiceProvision"],
+    "Restriction": ["Guidelines", "Regulation", "Legislation"],
+    "EnvironmentalRestructuring": ["Guidelines", "Fiscal", "Regulation", "Legislation", "EnvSocialPlanning", "ServiceProvision"],
+    "Modelling": ["CommunicationMarketing"],
+    "Enablement": ["Guidelines", "Fiscal", "Regulation", "Legislation", "EnvSocialPlanning", "ServiceProvision"]
+  },
+  "function_definitions": {
+    "Education": {
+      "definition": "Meningkatkan pengetahuan atau pemahaman sasaran.",
+      "example": "Penyuluhan manfaat Tablet Tambah Darah atau pentingnya ASI Eksklusif."
+    },
+    "Persuasion": {
+      "definition": "Menggunakan komunikasi untuk merangsang perasaan atau tindakan positif.",
+      "example": "Kampanye visual yang menyentuh emosi atau menunjukkan kebanggaan menjadi ibu menyusui."
+    },
+    "Incentivisation": {
+      "definition": "Menciptakan harapan akan adanya penghargaan atau insentif.",
+      "example": "Pemberian PMT (Pemberian Makanan Tambahan) atau sertifikat apresiasi bagi bayi sehat."
+    },
+    "Coercion": {
+      "definition": "Menciptakan harapan akan adanya biaya, hukuman, atau konsekuensi negatif.",
+      "example": "Denda sosial jika tidak mengikuti posyandu rutin (jarang digunakan dalam SBCC)."
+    },
+    "Training": {
+      "definition": "Menanamkan keterampilan atau teknik praktik bagi sasaran.",
+      "example": "Pelatihan cara menyusui dengan pelekatan yang benar atau cuci tangan pakai sabun."
+    },
+    "Restriction": {
+      "definition": "Menggunakan aturan untuk membatasi kesempatan melakukan perilaku tidak sehat.",
+      "example": "Aturan larangan membawa susu formula ke bangsal persalinan."
+    },
+    "EnvironmentalRestructuring": {
+      "definition": "Mengubah konteks fisik atau sosial lingkungan di sekitar sasaran.",
+      "example": "Menyediakan ruang laktasi di tempat kerja atau tangki air bersih di desa."
+    },
+    "Modelling": {
+      "definition": "Menyediakan contoh atau panutan agar ditiru oleh sasaran.",
+      "example": "Demonstrasi oleh ibu kader posyandu yang sukses melakukan ASI Eksklusif."
+    },
+    "Enablement": {
+      "definition": "Meningkatkan sarana pendukung atau mengurangi hambatan untuk memfasilitasi perilaku.",
+      "example": "Pembagian TTD gratis di sekolah atau pembentukan Kelompok Pendukung Ibu Menyusui."
+    }
+  }
+}

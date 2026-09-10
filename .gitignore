@@ -1,0 +1,23 @@
+# Python Virtual Environments
+.venv/
+env/
+venv/
+ENV/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment Variables (PENTING: Jangan upload API Key ke GitHub)
+.env
+
+# Database Lokal (SQLite)
+*.db
+sessions.db
+
+# File Arsip & Temporary
+*.zip
+*.log
+.DS_Store
+Thumbs.db
