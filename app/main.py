@@ -286,19 +286,32 @@ Beri saran taktis yang realistis untuk wilayah 3T, gunakan bahasa Indonesia yang
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+@app.get("/api/admin/storage")
+@app.get("/admin/storage")
+def get_admin_storage_stats():
+    """
+    Mengambil data kapasitas penyimpanan database (Neon / SQLite) untuk Admin.
+    """
+    try:
+        return db.get_storage_stats()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 @app.get("/api/health")
 @app.get("/health")
 def health_status():
     """
-    Endpoint pemantauan status koneksi Database (Neon Postgres / SQLite) dan status Gemini API.
+    Endpoint pemantauan status koneksi Database (Neon Postgres / SQLite), status Gemini API, dan kapasitas penyimpanan.
     """
-    db_type = "PostgreSQL (Neon Cloud)" if db.is_postgres else "SQLite (Local/Temporary)"
+    storage_stats = db.get_storage_stats()
+    db_type = storage_stats.get("type", "Unknown")
     gemini_ready = bool(Config.GEMINI_API_KEY and Config.GEMINI_API_KEY != "YOUR_GEMINI_API_KEY_HERE")
     return {
         "status": "online",
         "database": db_type,
         "is_postgres": db.is_postgres,
-        "gemini_api_key_configured": gemini_ready
+        "gemini_api_key_configured": gemini_ready,
+        "storage": storage_stats
     }
 
 

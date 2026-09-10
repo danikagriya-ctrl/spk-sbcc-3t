@@ -219,3 +219,52 @@ class SessionDatabase:
             else:
                 conn.execute(query, (session_id,))
                 conn.commit()
+
+    def get_storage_stats(self):
+        """
+        Mengambil statistik kapasitas dan penggunaan database saat ini.
+        """
+        try:
+            with self._get_connection() as conn:
+                if self.is_postgres:
+                    with conn.cursor() as cur:
+                        cur.execute("SELECT count(*) FROM sessions;")
+                        total_sessions = cur.fetchone()[0]
+                        cur.execute("SELECT pg_database_size(current_database());")
+                        db_size_bytes = cur.fetchone()[0]
+                        cur.execute("SELECT pg_size_pretty(%s);", (db_size_bytes,))
+                        db_size_pretty = cur.fetchone()[0]
+                        cur.execute("SELECT pg_total_relation_size('sessions');")
+                        table_size_bytes = cur.fetchone()[0]
+                        cur.execute("SELECT pg_size_pretty(%s);", (table_size_bytes,))
+                        table_size_pretty = cur.fetchone()[0]
+                    
+                    quota_bytes = 512 * 1024 * 1024  # 512 MB
+                    usage_pct = round((db_size_bytes / quota_bytes) * 100, 2)
+                    return {
+                        "type": "PostgreSQL (Neon Cloud)",
+                        "is_postgres": True,
+                        "total_sessions": total_sessions,
+                        "database_size": db_size_pretty,
+                        "database_size_bytes": db_size_bytes,
+                        "table_size": table_size_pretty,
+                        "free_quota": "512 MB (Neon Free Tier)",
+                        "usage_percent": usage_pct
+                    }
+                else:
+                    cur = conn.cursor()
+                    cur.execute("SELECT count(*) FROM sessions;")
+                    total_sessions = cur.fetchone()[0]
+                    size_bytes = os.path.getsize(self.db_path) if self.db_path and os.path.exists(self.db_path) else 0
+                    return {
+                        "type": "SQLite (Local/Temporary)",
+                        "is_postgres": False,
+                        "total_sessions": total_sessions,
+                        "database_size": f"{size_bytes / 1024:.2f} KB",
+                        "database_size_bytes": size_bytes,
+                        "table_size": f"{size_bytes / 1024:.2f} KB",
+                        "free_quota": "Local Disk / Ephemeral",
+                        "usage_percent": 0.1
+                    }
+        except Exception as e:
+            return {"error": str(e), "is_postgres": self.is_postgres}
