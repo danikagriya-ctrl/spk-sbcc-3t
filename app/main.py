@@ -311,8 +311,6 @@ def read_index_html():
 
 @app.get("/", response_class=HTMLResponse)
 @app.get("/index.html", response_class=HTMLResponse)
-@app.get("/api/index.py", response_class=HTMLResponse)
-@app.get("/api/index", response_class=HTMLResponse)
 def serve_frontend_root():
     return HTMLResponse(content=read_index_html(), status_code=200)
 
