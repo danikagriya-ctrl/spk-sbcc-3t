@@ -1,6 +1,6 @@
 import os
 from fastapi import FastAPI, HTTPException
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -25,6 +25,16 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.exception_handler(404)
+async def custom_404_handler(request, exc):
+    return JSONResponse(status_code=404, content={
+        "detail": "Not Found",
+        "scope_path": request.scope.get("path"),
+        "request_url_path": request.url.path,
+        "query": str(request.query_params),
+        "headers": {k: v for k, v in request.headers.items() if "auth" not in k.lower() and "key" not in k.lower() and "cookie" not in k.lower()}
+    })
 
 orchestrator = SessionOrchestrator()
 db = SessionDatabase()
