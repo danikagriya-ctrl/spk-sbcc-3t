@@ -54,6 +54,7 @@ class ClarifyRequest(BaseModel):
 
 # API Endpoint
 @app.get("/api/topics")
+@app.get("/topics")
 def get_supported_topics():
     """
     Mengambil daftar topik kesehatan terdaftar beserta deskripsinya dari database whitelist.
@@ -73,6 +74,7 @@ def get_supported_topics():
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/api/analyze")
+@app.post("/analyze")
 def analyze_story(req: AnalyzeRequest):
     """
     Memulai analisis kasus kesehatan dan diagnosis perilaku baru.
@@ -93,6 +95,7 @@ def analyze_story(req: AnalyzeRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/api/clarify")
+@app.post("/clarify")
 def clarify_session(req: ClarifyRequest):
     """
     Mengirimkan jawaban pertanyaan klarifikasi untuk melanjutkan diagnosis.
@@ -109,6 +112,7 @@ def clarify_session(req: ClarifyRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/api/history")
+@app.get("/history")
 def get_session_history():
     """
     Mengambil daftar riwayat sesi analisis.
@@ -119,6 +123,7 @@ def get_session_history():
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/api/session/{session_id}")
+@app.get("/session/{session_id}")
 def get_session_detail(session_id: str):
     """
     Mengambil detail hasil keputusan untuk satu sesi.
@@ -145,6 +150,7 @@ class AdminEditRequest(BaseModel):
 
 # Endpoint Admin
 @app.post("/api/admin/login")
+@app.post("/admin/login")
 def admin_login(req: AdminLoginRequest):
     """
     Endpoint otentikasi login admin sederhana.
@@ -154,6 +160,7 @@ def admin_login(req: AdminLoginRequest):
     raise HTTPException(status_code=401, detail="Username atau password admin salah.")
 
 @app.delete("/api/admin/session/{session_id}")
+@app.delete("/admin/session/{session_id}")
 def delete_session_record(session_id: str):
     """
     Menghapus sesi analisis secara permanen dari database.
@@ -165,6 +172,7 @@ def delete_session_record(session_id: str):
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.put("/api/admin/session/{session_id}")
+@app.put("/admin/session/{session_id}")
 def edit_session_record(session_id: str, req: AdminEditRequest):
     """
     Mengedit detail cerita/profil dan men-diagnose ulang kasus tersebut.
@@ -188,6 +196,7 @@ kb_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../knowledge_
 claims_path = os.path.join(kb_dir, "kb_claims.json")
 
 @app.get("/api/admin/kb/claims")
+@app.get("/admin/kb/claims")
 def get_kb_claims():
     """
     Mengambil data mentah dari kb_claims.json untuk diedit di UI Admin.
@@ -202,6 +211,7 @@ def get_kb_claims():
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.put("/api/admin/kb/claims")
+@app.put("/admin/kb/claims")
 def update_kb_claims(new_claims: List[Dict[str, Any]]):
     """
     Memperbarui file kb_claims.json dan me-reload composer di memori backend.
@@ -225,6 +235,7 @@ class ChatRequest(BaseModel):
     chat_history: List[Dict[str, str]] = []
 
 @app.post("/api/chat")
+@app.post("/chat")
 def chat_consultation(req: ChatRequest):
     """
     Rute obrolan konsultasi AI mengenai hasil keputusan kasus.
@@ -266,6 +277,7 @@ Beri saran taktis yang realistis untuk wilayah 3T, gunakan bahasa Indonesia yang
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/api/health")
+@app.get("/health")
 def health_status():
     """
     Endpoint pemantauan status koneksi Database (Neon Postgres / SQLite) dan status Gemini API.
@@ -283,11 +295,13 @@ def health_status():
 # Setup Layanan Frontend UI (index.html)
 def read_index_html():
     candidates = [
+        os.path.join(os.getcwd(), "public", "index.html"),
         os.path.join(os.path.dirname(os.path.abspath(__file__)), "static", "index.html"),
         os.path.join(os.getcwd(), "app", "static", "index.html"),
         os.path.join(os.getcwd(), "static", "index.html"),
         os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "app", "static", "index.html"),
         os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "static", "index.html"),
+        os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "public", "index.html"),
     ]
     for p in candidates:
         if os.path.exists(p):
@@ -297,6 +311,8 @@ def read_index_html():
 
 @app.get("/", response_class=HTMLResponse)
 @app.get("/index.html", response_class=HTMLResponse)
+@app.get("/api/index.py", response_class=HTMLResponse)
+@app.get("/api/index", response_class=HTMLResponse)
 def serve_frontend_root():
     return HTMLResponse(content=read_index_html(), status_code=200)
 
