@@ -265,6 +265,20 @@ Beri saran taktis yang realistis untuk wilayah 3T, gunakan bahasa Indonesia yang
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+@app.get("/api/health")
+def health_status():
+    """
+    Endpoint pemantauan status koneksi Database (Neon Postgres / SQLite) dan status Gemini API.
+    """
+    db_type = "PostgreSQL (Neon Cloud)" if db.is_postgres else "SQLite (Local/Temporary)"
+    gemini_ready = bool(Config.GEMINI_API_KEY and Config.GEMINI_API_KEY != "YOUR_GEMINI_API_KEY_HERE")
+    return {
+        "status": "online",
+        "database": db_type,
+        "is_postgres": db.is_postgres,
+        "gemini_api_key_configured": gemini_ready
+    }
+
 
 # Setup Layanan Frontend UI (index.html)
 def read_index_html():
