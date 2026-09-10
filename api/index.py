@@ -1,6 +1,6 @@
 import sys
 import os
-from urllib.parse import parse_qs
+import json
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if ROOT_DIR not in sys.path:
@@ -8,20 +8,26 @@ if ROOT_DIR not in sys.path:
 
 from app.main import app as fastapi_app
 
-class VercelPathHandler:
-    def __init__(self, app):
-        self.app = app
+async def app(scope, receive, send):
+    if scope["type"] == "http":
+        # Jika ada parameter debug=1, tampilkan isi scope & headers Vercel untuk inspeksi
+        if b"debug=1" in scope.get("query_string", b""):
+            headers = {k.decode('latin1'): v.decode('latin1') for k, v in scope.get("headers", [])}
+            body = json.dumps({
+                "path": scope.get("path"),
+                "raw_path": scope.get("raw_path", b"").decode("latin1", "ignore"),
+                "query_string": scope.get("query_string", b"").decode("latin1"),
+                "headers": headers
+            }, indent=2).encode("utf-8")
+            await send({
+                "type": "http.response.start",
+                "status": 200,
+                "headers": [[b"content-type", b"application/json"]]
+            })
+            await send({
+                "type": "http.response.body",
+                "body": body
+            })
+            return
 
-    async def __call__(self, scope, receive, send):
-        if scope["type"] == "http":
-            query_str = scope.get("query_string", b"").decode("utf-8")
-            if "__path=" in query_str:
-                qs = parse_qs(query_str)
-                if "__path" in qs and qs["__path"]:
-                    target_path = qs["__path"][0]
-                    if not target_path.startswith("/"):
-                        target_path = "/" + target_path
-                    scope["path"] = target_path
-        await self.app(scope, receive, send)
-
-app = VercelPathHandler(fastapi_app)
+    await fastapi_app(scope, receive, send)
