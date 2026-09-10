@@ -26,15 +26,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.exception_handler(404)
-async def custom_404_handler(request, exc):
-    return JSONResponse(status_code=404, content={
-        "detail": "Not Found",
-        "scope_path": request.scope.get("path"),
-        "request_url_path": request.url.path,
-        "query": str(request.query_params),
-        "headers": {k: v for k, v in request.headers.items() if "auth" not in k.lower() and "key" not in k.lower() and "cookie" not in k.lower()}
-    })
+@app.middleware("http")
+async def vercel_path_rewrite_middleware(request, call_next):
+    api_path = request.query_params.get("__api_path")
+    if api_path:
+        sub = api_path if api_path.startswith("/") else "/" + api_path
+        target = "/api" + sub
+        request.scope["path"] = target
+        request.scope["raw_path"] = target.encode("latin1")
+    return await call_next(request)
 
 orchestrator = SessionOrchestrator()
 db = SessionDatabase()
