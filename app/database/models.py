@@ -230,14 +230,10 @@ class SessionDatabase:
                     with conn.cursor() as cur:
                         cur.execute("SELECT count(*) FROM sessions;")
                         total_sessions = cur.fetchone()[0]
-                        cur.execute("SELECT pg_database_size(current_database());")
-                        db_size_bytes = cur.fetchone()[0]
-                        cur.execute("SELECT pg_size_pretty(%s);", (db_size_bytes,))
-                        db_size_pretty = cur.fetchone()[0]
-                        cur.execute("SELECT pg_total_relation_size('sessions');")
-                        table_size_bytes = cur.fetchone()[0]
-                        cur.execute("SELECT pg_size_pretty(%s);", (table_size_bytes,))
-                        table_size_pretty = cur.fetchone()[0]
+                        cur.execute("SELECT pg_database_size(current_database()), pg_size_pretty(pg_database_size(current_database()));")
+                        db_size_bytes, db_size_pretty = cur.fetchone()
+                        cur.execute("SELECT pg_total_relation_size('sessions'), pg_size_pretty(pg_total_relation_size('sessions'));")
+                        table_size_bytes, table_size_pretty = cur.fetchone()
                     
                     quota_bytes = 512 * 1024 * 1024  # 512 MB
                     usage_pct = round((db_size_bytes / quota_bytes) * 100, 2)
