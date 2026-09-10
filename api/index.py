@@ -10,24 +10,20 @@ from app.main import app as fastapi_app
 
 async def app(scope, receive, send):
     if scope["type"] == "http":
-        # Jika ada parameter debug=1, tampilkan isi scope & headers Vercel untuk inspeksi
-        if b"debug=1" in scope.get("query_string", b""):
-            headers = {k.decode('latin1'): v.decode('latin1') for k, v in scope.get("headers", [])}
-            body = json.dumps({
-                "path": scope.get("path"),
-                "raw_path": scope.get("raw_path", b"").decode("latin1", "ignore"),
-                "query_string": scope.get("query_string", b"").decode("latin1"),
-                "headers": headers
-            }, indent=2).encode("utf-8")
-            await send({
-                "type": "http.response.start",
-                "status": 200,
-                "headers": [[b"content-type", b"application/json"]]
-            })
-            await send({
-                "type": "http.response.body",
-                "body": body
-            })
-            return
-
-    await fastapi_app(scope, receive, send)
+        headers = {k.decode('latin1'): v.decode('latin1') for k, v in scope.get("headers", [])}
+        body = json.dumps({
+            "scope_path": scope.get("path"),
+            "scope_raw_path": scope.get("raw_path", b"").decode("latin1", "ignore"),
+            "scope_query_string": scope.get("query_string", b"").decode("latin1"),
+            "headers": headers
+        }, indent=2).encode("utf-8")
+        await send({
+            "type": "http.response.start",
+            "status": 200,
+            "headers": [[b"content-type", b"application/json"]]
+        })
+        await send({
+            "type": "http.response.body",
+            "body": body
+        })
+        return
